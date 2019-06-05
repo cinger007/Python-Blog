@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>机器学习 线性回归实验一 &mdash; UPC Python&#39;s BLOG 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to UPC Python BLOG’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> UPC Python's BLOG
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">机器学习 线性回归实验一</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pandas">一、Pandas库的使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy">二、Numpy 的使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">三、单变量线性回归</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">UPC Python's BLOG</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>机器学习 线性回归实验一</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mdtest.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>机器学习 线性回归实验一<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Location: China University of Petroleum   Weather: Sunny</p>
+<p>今天是机器学习的上机的第一课，首先从Python中的pandas库的开始学习</p>
+<div class="section" id="pandas">
+<h2>一、Pandas库的使用<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span>  <span class="s1">&#39;data/ex1data1.txt&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="s1">&#39;Profit&#39;</span><span class="p">])</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Dataframe.head(<code class="docutils literal notranslate"><span class="pre">number</span></code>)  提取出Dataframe的前几个</p></li>
+<li><p>Dataframe.describe()</p></li>
+</ol>
+<p><img alt="C:%5CUsers%5C99602%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1558427863613.png" src="C:%5CUsers%5C99602%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1558427863613.png" />1558427863613</p>
+<p>​	count: 计数</p>
+<p>​	mean：计算平均值</p>
+<p>​	std：计算标准差</p>
+<p>​	min：计算最小值</p>
+<p>​	max：计算最大值</p>
+<p>​	25%，50%，75%：则是返回第25%个</p>
+<p>3.Dataframe.shape 返回的是一个tuple</p>
+<p>​	获取行数使用 rows = Dataframe.shape[0]</p>
+<p>​	获取列数使用 cols = Dataframe.shape[1]</p>
+<p>4.DataFrame.insert(<em>loc</em>, <em>column</em>, <em>value</em>, <em>allow_duplicates=False</em>)</p>
+<p>​	插入一列数据，loc指插入的位置，column指插入的列的列名，value为需要插入的值</p>
+</div>
+<div class="section" id="numpy">
+<h2>二、Numpy 的使用<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>X = np.array([0,0]) 作用为将括号中的内容转换程数组</p></li>
+<li><p>X = np.matrix(X) 作用为将X转化成矩阵</p>
+<p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">=</span> <span class="pre">np.matrix(np.array([0,0]))</span></code></p>
+<p>上面的代码运行后的结果为 <code class="docutils literal notranslate"><span class="pre">[[0,0]]</span></code></p>
+</li>
+<li><p>矩阵的转置</p>
+<p>X = X.transcope() 或者 X = X.T</p>
+</li>
+<li><p>矩阵的对应元素相乘</p>
+<p>X = multiply(mat1,mat2)</p>
+</li>
+<li><p>矩阵的点乘</p>
+<p>X = A * B</p>
+</li>
+<li><p>利用矩阵访问元素</p>
+<p>值得注意的是，numpy 访问矩阵的方法与python中利用下标访问数组的方式不一样，不能够通过<code class="docutils literal notranslate"><span class="pre">X[row][col]</span></code>来访问，访问方式与matlab一致，使用 X[row,col]来访问矩阵</p>
+</li>
+<li><p>矩阵类型</p>
+<p>在Numpy中，矩阵中的元素也具有数据类型，与python的数据类型不同，其有int16,float64等等，这样有时会存在 a[0,1] = 0.1 赋值不上的问题，因为其被强制转换成了int型再进行赋值。</p>
+<p>（1）dtype = float</p>
+<p>​	<code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">np.matrix([[0,0]],</span> <span class="pre">dtype=float)</span></code></p>
+<p>（2）astype 进行矩阵类型的转换</p>
+<p>​	<code class="docutils literal notranslate"><span class="pre">m.astype(np.float64)</span></code></p>
+</li>
+<li><p>.flatten()方法和.ravel()方法</p>
+<p>二者的效果一致，都是将一个二维矩阵扁平化成一维矩阵</p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">numpy</span> <span class="pre">import</span> <span class="pre">*</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">arange(12).reshape(3,4)</span></code>
+<code class="docutils literal notranslate"><span class="pre">print(a)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">#[[</span> <span class="pre">0</span>&#160; <span class="pre">1</span>&#160; <span class="pre">2</span>&#160; <span class="pre">3]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">#[</span> <span class="pre">4</span>&#160; <span class="pre">5</span>&#160; <span class="pre">6</span>&#160; <span class="pre">7]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">#[</span> <span class="pre">8</span>&#160; <span class="pre">9</span> <span class="pre">10</span> <span class="pre">11]]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">print(a.ravel())</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">#[</span> <span class="pre">0</span>&#160; <span class="pre">1</span>&#160; <span class="pre">2</span>&#160; <span class="pre">3</span>&#160; <span class="pre">4</span>&#160; <span class="pre">5</span>&#160; <span class="pre">6</span>&#160; <span class="pre">7</span>&#160; <span class="pre">8</span>&#160; <span class="pre">9</span> <span class="pre">10</span> <span class="pre">11]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">print(a.flatten())</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">#[</span> <span class="pre">0</span>&#160; <span class="pre">1</span>&#160; <span class="pre">2</span>&#160; <span class="pre">3</span>&#160; <span class="pre">4</span>&#160; <span class="pre">5</span>&#160; <span class="pre">6</span>&#160; <span class="pre">7</span>&#160; <span class="pre">8</span>&#160; <span class="pre">9</span> <span class="pre">10</span> <span class="pre">11]</span></code></p>
+</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>三、单变量线性回归<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><img alt="C:%5CUsers%5C99602%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1558574062135.png" src="C:%5CUsers%5C99602%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1558574062135.png" />1558574062135</p>
+<p>​					<!--图1 在学习率为0.02，迭代次数为10000的情况下的学习结果--></p>
+<p><img alt="C:%5CUsers%5C99602%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1558657377628.png" src="C:%5CUsers%5C99602%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1558657377628.png" />1558657377628</p>
+<p>​		 <!-- 图2 在学习率为 0.02，迭代次数为10000的情况下的 迭代次数与代价的关系 --></p>
+<p><img alt="C:%5CUsers%5C99602%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1558658585999.png" src="C:%5CUsers%5C99602%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1558658585999.png" />1558658585999</p>
+<p>​		                      <!-- 图3  不同学习率以及迭代次数带来的代价的改变  --></p>
+<p>​       通过图3我们可以发现，在不断更改迭代次数没有太大的意义，因为当迭代次数大于1500时，所有的学习率下的代价基本上都是一条直线</p>
+<p><img alt="C:%5CUsers%5C99602%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1558658829251.png" src="C:%5CUsers%5C99602%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1558658829251.png" />1558658829251</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>					&lt;!-- 图4 不同学习率的代价变化图 --&gt;
+</pre></div>
+</div>
+<p>通过本图我们可以发现在学习率为0.02的情况下带来的代价函数的下降效果是最佳的。</p>
+<p>源代码：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn.tree</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+
+<span class="k">def</span> <span class="nf">computeCost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">):</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(((</span><span class="n">X</span> <span class="o">*</span> <span class="n">theta</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">J</span>
+
+
+<span class="k">def</span> <span class="nf">gradientDescent</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">iters</span><span class="p">):</span>
+    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">theta_compute</span> <span class="o">=</span> <span class="n">theta</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">theta</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">costs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iters</span><span class="p">):</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span> <span class="o">*</span> <span class="n">theta</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
+                <span class="n">term</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="n">col</span><span class="p">])</span>
+                <span class="n">theta_compute</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">term</span><span class="p">)</span> <span class="o">*</span> <span class="n">alpha</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+            <span class="n">costs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">computeCost</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta_compute</span><span class="p">))</span>
+            <span class="n">theta</span> <span class="o">=</span> <span class="n">theta_compute</span>
+    <span class="k">return</span> <span class="n">theta</span><span class="p">,</span> <span class="n">costs</span>
+
+
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;data/ex1data1.txt&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">,</span> <span class="s1">&#39;Profit&#39;</span><span class="p">])</span>
+<span class="n">data</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Ones&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 获取列数</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="n">cols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">cols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="n">cols</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>  <span class="c1"># 初始化theta为一个1*2空矩阵</span>
+<span class="c1"># cost = computeCost(X, y, theta)</span>
+<span class="c1"># alpha, iters = 0.015, 10000</span>
+<span class="c1"># theta_compute, costs = gradientDescent(X, y, theta, alpha, iters)</span>
+
+<span class="n">alpha_list</span><span class="p">,</span> <span class="n">iters_list</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.015</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">],</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="s1">&#39;goldenrod&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">]</span>
+<span class="c1"># x = np.linspace(data.Population.min(), data.Population.max(), 100)</span>
+<span class="c1"># f = theta_compute[0, 0] + (theta_compute[0, 1] * x)</span>
+<span class="c1"># fig, ax = plt.subplots(figsize=(12, 8))</span>
+<span class="c1"># ax.plot(x, f, &#39;r&#39;, label=&#39;Prediction&#39;)</span>
+<span class="c1"># ax.scatter(data.Population, data.Profit, label=&#39;Traning Data&#39;)</span>
+<span class="c1"># ax.legend(loc=2)</span>
+<span class="c1"># plt.show()</span>
+<span class="c1"># print(theta_compute, costs)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">color_index</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">alpha_list</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">iters</span> <span class="ow">in</span> <span class="n">iters_list</span><span class="p">:</span>
+        <span class="n">theta_compute</span><span class="p">,</span> <span class="n">costs</span> <span class="o">=</span> <span class="n">gradientDescent</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">iters</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">iters</span><span class="p">),</span> <span class="n">costs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;a= &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="s1">&#39;iters= &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">iters</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">theta_compute</span><span class="p">,</span> <span class="n">costs</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Iterations&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Costs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to UPC Python BLOG’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, UPC@李昕
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
