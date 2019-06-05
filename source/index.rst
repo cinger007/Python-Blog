@@ -10,5 +10,5 @@ Welcome to UPC Python BLOG's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   mdtest
+   mdtest2
 
