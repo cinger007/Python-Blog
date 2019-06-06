@@ -12,7 +12,8 @@ data = pd.read_csv(path, header=None, names=['Population', 'Profit'])
 data.head()
 data.describe()
 ```
-
+[超链接测试]（https://python-blog.readthedocs.io/zh/latest/gdp.html）
+[超链接测试]（gdp.html）
 1. Dataframe.head(`number`)  提取出Dataframe的前几个
 2. Dataframe.describe() 
 
