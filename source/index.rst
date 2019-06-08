@@ -10,6 +10,8 @@ Welcome to UPC Python BLOG's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   mdtest2
-   gdp
+   basic
+   datahandle
+   dataget
+   visualization
 
