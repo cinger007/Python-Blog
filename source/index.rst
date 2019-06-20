@@ -10,8 +10,10 @@ Welcome to UPC Python BLOG's documentation!
    :maxdepth: 2
    :caption: Contents:
    
+   intro
    basic
    datahandle
    dataget
    visualization
+   analysis
 
