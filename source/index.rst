@@ -10,6 +10,7 @@ Welcome to UPC Python BLOG's documentation!
    :maxdepth: 2
    :caption: Contents:
    
+   00list
    01intro
    02basic
    03control
