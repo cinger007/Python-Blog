@@ -10,10 +10,15 @@ Welcome to UPC Python BLOG's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   intro
-   basic
-   datahandle
-   dataget
-   visualization
-   analysis
+   01intro
+   02basic
+   03control
+   04datahandle
+   05object
+   06dataget
+   07numpy
+   08pandas
+   09visualization
+   10dataclean
+   11merge
 
