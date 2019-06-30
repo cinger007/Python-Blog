@@ -52,7 +52,89 @@ python有六个标准的数据类型：
 
 了解字符串的定义方法，索引的使用，切片的建立方法
 
-身份证为例
+1）字符串的创建和基本运算
+
+
+```python
+# 可以通过 " 或者 '来创建字符串
+"This is a string."
+'This is also a string.'
+
+# 字符串间可以通过 + 号进行连接
+"Hello " + "world!"   # => "Hello world!"
+# 甚至不使用'+'号，也可以把字符串进行连接
+"Hello " "world!"     # => "Hello world!"
+
+#可以通过 * 号，对字符串进行复制，比如：
+"Hello" * 3          # => "HelloHelloHello"
+```
+
+
+
+
+    'HelloHelloHello'
+
+
+
+2）索引
+python中的字符串有两种索引方式，第一是从左往右，从0开始依次增加，第二种是从右往左，从-1开始依次减少。
+注意！没有单独的字符类型，一个字符就是长度为1的字符串。
+
+
+```python
+word = 'Python'
+print(word[0], word[5])   #输出为：P n
+
+print(word[-1], word[-6])   #输出为：n P
+```
+
+    P n
+    n P
+    
+
+3）切片
+可以对字符串进行切片，获取一段子串，具体用法如图2-10所示，用冒号分隔两个索引，形式为：变量[头下标:尾下标]。截取的范围是左闭右开，并且两个索引都可以省略。
+![datatype.png](./figure/stringslice.png)
+图2-10 字符串切片用法
+
+
+```python
+s = 'ILovePython'
+s[1:5]
+#输出为：'Love'
+
+#隔2个跳着取
+s[1:10:2]
+#输出为：'LvPto'
+
+s[:]
+#输出为：'ILovePython'
+
+s[5:]
+#输出为：'Python'
+
+s[-10:-6]
+#输出为：'Love'
+```
+
+
+
+
+    'Love'
+
+
+
+4）求长度len()
+注意：len()方法同样可以用于其他数据类型，例如查看列表、元组以及字典中元素的多少。
+
+
+```python
+name = "Hello, Python"
+print(len(name))     #输出为：13
+```
+
+    13
+    
 
 ## 练习题
 
