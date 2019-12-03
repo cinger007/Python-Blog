@@ -14,6 +14,7 @@
 
 import sys
 import os
+#import sphinx_markdown_tables
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -26,18 +27,19 @@ import os
 #needs_sphinx = '1.0'
 import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
+#html_theme = 'alabaster'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 from recommonmark.parser import CommonMarkParser
 source_parsers = {
-    '.md': CommonMarkParser,
+    '.md': 'recommonmark.parser.CommonMarkParser',
 }
 source_suffix = ['.rst', '.md']
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['chinese_search',
-'sphinx-markdown-tables']
+'sphinx_markdown_tables']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
