@@ -127,7 +127,7 @@ print(word[-1], word[-6])   # => n P
 
    > 字符串的切片是原字符串的副本，对切片的修改不影响原字符串
 
-   ![datatype.png](./figure/stringslice.png)
+   ![Python String Index](./figure/stringslice.png)
    图2-10 字符串切片用法
 
 
@@ -318,7 +318,7 @@ print(id(d))	# => 140713032544000
 
 在以上的代码示例中可以获知a被重写赋值后，内存空间发生了变化；(2) 用a对b进行赋值后，b和a的内存空间相同。(3) Python中是以值为中心的，变量c和原始的a、变量d和变量b原本没有任何关系，但是因为存储的值相同，导致对应变量的空间位置是相同的。
 
-## 3. 类型转换
+## 4. 类型转换
 
 Python中采用函数进行类型转换
 
@@ -338,7 +338,7 @@ Python中采用函数进行类型转换
 | [hex(x)](https://www.runoob.com/python3/python-func-hex.html) | 将一个整数转换为一个十六进制字符串                  |
 | [oct(x)](https://www.runoob.com/python3/python-func-oct.html) | 将一个整数转换为一个八进制字符串                    |
 
-## 4. 数据的输入和输出
+## 5. 数据的输入和输出
 
 ### 输入
 

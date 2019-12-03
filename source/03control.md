@@ -23,11 +23,11 @@ else:
 
 选择结构的基本流程如下图所示。*expr*表示判断条件，不需要额外添加小括号，但是必须以冒号结束。 相同缩进数的语句在一起组成一个语句块，表示受该条件影响的语句块。流程如下图所示：
 
-![if语句控制流程](.\figure\python-if.png)
+![if control flow](.\figure\python-if.png)
 
 下图中演示了while和if的具体执行流程，while在语法结构上与if完全相同，if只判断一次，但while会循环执行。
 
-![while和if动态执行过程](.\figure\python-if.gif)
+![while and if exectuion](https://blog.penjee.com/wp-content/uploads/2016/04/while-loop-modulo-even-numbers-python-animation.gif)
 
 - 对于多重选择，python使用elif作为关键字
 
