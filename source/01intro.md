@@ -36,5 +36,64 @@
 
 ## 3. 环境介绍
 
+ Python的语法比较简单，采用缩进方式，写出来的代码如下： 
+
+~~~ python
+# print absolute value of an integer:
+a = int(input())	#e.g. input 100
+if a >= 0:
+    print(a)
+else:
+    print(-a)
+~~~
+
+ 以`#`开头的语句是注释，注释是给人看的，可以是任意内容，解释器会忽略掉注释。其他每一行都是一个语句，当语句以冒号`:`结尾时，缩进的语句视为代码块。  按照约定俗成的惯例，应该始终坚持使用*4个空格*的缩进。 
+
 本书中的所有介绍基于python3.x，在Jupyter中进行运行。因为jupyter支持ipython，并有一些特殊的设置，因此书中的实例代码并不保障在idle等简单的编辑器下能够成功运行。特此说明。
 
+##  4. 适用范围
+
+本书重点在于适用Python语言进行数据分析，假定您已经学习过一门程序设计语言（例如C语言），对程序设计的基本用法已经掌握。在基础语法部分，重点强调Python语言与其他的语言的不同之处，而不会对基础语法进行详细介绍。
+
+## 练习题
+
+1. 运行以下代码，体会Python中对“大数”的支持。Python中通过内部功能增强，打破了存储对数据的限制，可以实现任意大小数据的运算。
+
+   ~~~ python
+   342534253432453425+3453452323423   # => 342537706884776848
+   ~~~
+   
+2. 运行以下代码，观察出现的图形，体会for的使用
+
+   ~~~ python
+   from turtle import*
+   pensize(5)	#set the size of the pen
+   speed("fastest")	#set the speed of the animation
+   for i in range(1,37):	#loop 36 times
+       pencolor(0.018,0.015*i,0.012)	#set the color with (Red,Green,Blue)
+       circle(100,360)		#draw a circle
+       right(10)		#turn right 10 degree
+   done()
+   ~~~
+
+   ![](.\figure\overlapped circle.png)
+
+3. 运行以下代码，观察出现的图形，体会while的使用
+
+~~~ python
+from turtle import *
+color("green")	#set the color
+pensize(3)	#set the pen size
+speed("fastest")	#set the speed of the animation
+i=0	
+while i<12:	#loop 12 times to draw 12 stars
+    right(150)	#turn right 150 degree
+    forward(150)	#move foreward 150 steps
+    #the above two statement will repeat 5 times to make a star
+    if abs(pos())<1:	#if pen come back to the original
+        left(150)	#turn left 150 degree, being ready for the next star
+        i+=1	#i increment 1
+done()
+~~~
+
+![](.\figure\turtle while loop.png)
