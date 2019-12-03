@@ -338,7 +338,7 @@ Python中采用函数进行类型转换
 | [hex(x)](https://www.runoob.com/python3/python-func-hex.html) | 将一个整数转换为一个十六进制字符串                  |
 | [oct(x)](https://www.runoob.com/python3/python-func-oct.html) | 将一个整数转换为一个八进制字符串                    |
 
-### 4. 数据的输入和输出
+## 4. 数据的输入和输出
 
 ### 输入
 
